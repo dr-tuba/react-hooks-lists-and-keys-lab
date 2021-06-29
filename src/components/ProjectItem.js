@@ -1,16 +1,13 @@
 import React from "react";
-import { nanoid } from 'nanoid';
 
-function ProjectItem({ name, about, technologies}) {
-  console.log(technologies)
-  
+function ProjectItem({ name, about, technologies }) {
+  let i = 1
   const eachTechnology = technologies.map((tech) => {
-    console.log(tech)
     return (
-      <span key={nanoid()}>{tech}</span>
+      <span key={tech + i}>{tech}</span>
     )}
   )
-  
+  i++
   return (
     <div className="project-item">
       <h3>{name}</h3>
